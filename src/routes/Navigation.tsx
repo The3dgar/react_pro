@@ -21,7 +21,7 @@ export const Navigation = () => {
           <ul>
             {routes.map((r) => (
               <li key={r.path}>
-                <NavLink to={r.path} activeClassName="nav-active" exact>
+                <NavLink to={r.path} activeClassName="nav-active">
                   {r.name}
                 </NavLink>
               </li>
@@ -30,7 +30,7 @@ export const Navigation = () => {
         </nav>
         <Switch>
           {routes.map((r) => (
-            <Route key={r.path} path={r.path} exact component={r.Component} />
+            <Route key={r.path} path={r.path} component={r.Component} />
           ))}
 
           <Redirect to="/" />
