@@ -4,6 +4,7 @@ import {
   Route,
   NavLink,
 } from 'react-router-dom';
+import ShoppingPage from '../02-component-patterns/pages/ShoppingPage';
 
 import logo from '../logo.svg';
 
@@ -15,8 +16,8 @@ export const Navigation = () => {
           <img src={logo} alt="React Logo" />
           <ul>
             <li>
-              <NavLink to="/home" activeClassName="nav-active" exact>
-                home
+              <NavLink to="/" activeClassName="nav-active" exact>
+                Shopping
               </NavLink>
             </li>
             <li>
@@ -35,14 +36,14 @@ export const Navigation = () => {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/home">
-            <h1>Home</h1>
-          </Route>
           <Route path="/users">
             <h1>Users</h1>
           </Route>
           <Route path="/about">
             <h1>About</h1>
+          </Route>
+          <Route path="/">
+            <ShoppingPage/>
           </Route>
         </Switch>
       </div>
