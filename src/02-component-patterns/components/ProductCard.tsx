@@ -1,9 +1,6 @@
-import { createContext } from 'react';
+import { createContext, ReactElement, CSSProperties } from 'react';
 import { useProducts } from '../hooks/useProducts';
-import {
-  ProductCardProps,
-  ProductContextProps,
-} from '../interfaces/interfaces';
+import { Product, ProductContextProps } from '../interfaces/interfaces';
 // import { ProductImage } from './ProductImage';
 // import { ProductTitle } from './ProductTitle';
 // import { ProductButtons } from './ProductButtons';
@@ -12,7 +9,19 @@ import styles from '../styles/styles.module.css';
 export const ProductContext = createContext({} as ProductContextProps);
 const { Provider } = ProductContext;
 
-export const ProductCard = ({ children, product }: ProductCardProps) => {
+export interface ProductCardProps {
+  product: Product;
+  children?: ReactElement | ReactElement[];
+  className?: string;
+  style?: CSSProperties;
+}
+
+export const ProductCard = ({
+  children,
+  product,
+  className,
+  style,
+}: ProductCardProps) => {
   const { counter, increaseBy } = useProducts();
   return (
     <Provider
@@ -22,7 +31,7 @@ export const ProductCard = ({ children, product }: ProductCardProps) => {
         product,
       }}
     >
-      <div className={styles.productCard}>
+      <div className={`${styles.productCard} ${className}`} style={style}>
         {children}
         {/* Forma tradicional*/}
         {/* <ProductImage img={product.img} />
