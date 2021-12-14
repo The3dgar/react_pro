@@ -1,0 +1,95 @@
+[
+  {
+    "type": "input",
+    "name": "firstName",
+    "placeholder": "John",
+    "label": "First Name",
+    "value": "",
+    "validations": [
+      {
+        "type": "required",
+        "message": "First Name is required"
+      },
+      {
+        "type": "minLength",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "type": "input",
+    "name": "lastName",
+    "placeholder": "Doe",
+    "label": "Last Name",
+    "value": "",
+    "validations": [
+      {
+        "type": "required",
+        "message": "Last Name is required"
+      }
+    ]
+  },
+  {
+    "label": "Email",
+    "type": "input",
+    "name": "email",
+    "placeholder": "john@gmail.com",
+    "value": "",
+    "validations": [
+      {
+        "type": "required",
+        "message": "Email is required"
+      },
+      {
+        "type": "email",
+        "message": "email is invalid"
+      }
+    ]
+  },
+  {
+    "type": "select",
+    "name": "favoriteGame",
+    "label": "Favorite Game",
+    "value": "",
+    "options": [
+      {
+        "id": 1,
+        "name": "Counter Strike"
+      },
+      {
+        "id": 2,
+        "name": "Dota 2"
+      },
+      {
+        "id": 3,
+        "name": "League of Legends"
+      },
+      {
+        "id": 4,
+        "name": "Overwatch"
+      },
+      {
+        "id": 5,
+        "name": "PUBG"
+      },
+      {
+        "id": 6,
+        "name": "Rocket League"
+      },
+      {
+        "id": 7,
+        "name": "Starcraft 2"
+      },
+      {
+        "id": 8,
+        "name": "World of Warcraft"
+      }
+    ],
+    "validations": [
+      {
+        "type": "required",
+        "message": "Favorite game is required"
+      }
+    ]
+  }
+]
